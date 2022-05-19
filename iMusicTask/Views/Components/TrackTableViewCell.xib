@@ -16,13 +16,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tji-sG-yLV">
-                        <rect key="frame" x="8" y="8" width="33" height="21"/>
+                        <rect key="frame" x="48" y="8" width="33" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-eO-KmU">
-                        <rect key="frame" x="8" y="37" width="41" height="21"/>
+                        <rect key="frame" x="48" y="37" width="41" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -33,24 +33,40 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMv-41-guv">
+                        <rect key="frame" x="8" y="16" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="n88-Vc-D5k"/>
+                            <constraint firstAttribute="width" secondItem="BMv-41-guv" secondAttribute="height" multiplier="1:1" id="rJN-KR-66X"/>
+                        </constraints>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="playbackButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wGx-Q0-2Hq"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="BMv-41-guv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3E5-V3-y16"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tji-sG-yLV" secondAttribute="trailing" constant="8" id="4r0-TL-5i8"/>
                     <constraint firstAttribute="trailing" secondItem="EJv-6S-bfW" secondAttribute="trailing" constant="8" id="6yP-qs-m9Q"/>
-                    <constraint firstItem="u4l-eO-KmU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8pK-UY-ZBs"/>
+                    <constraint firstItem="u4l-eO-KmU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="48" id="8pK-UY-ZBs"/>
                     <constraint firstItem="u4l-eO-KmU" firstAttribute="top" secondItem="tji-sG-yLV" secondAttribute="bottom" constant="8" symbolic="YES" id="aiX-FC-e1O"/>
                     <constraint firstItem="EJv-6S-bfW" firstAttribute="centerY" secondItem="u4l-eO-KmU" secondAttribute="centerY" id="dxq-le-gXf"/>
                     <constraint firstItem="EJv-6S-bfW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="u4l-eO-KmU" secondAttribute="trailing" constant="16" id="hDU-zX-mQt"/>
-                    <constraint firstItem="tji-sG-yLV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="tgh-Xp-8Fj"/>
+                    <constraint firstItem="BMv-41-guv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="itK-XX-6eX"/>
+                    <constraint firstItem="tji-sG-yLV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="48" id="tgh-Xp-8Fj"/>
                     <constraint firstItem="tji-sG-yLV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uMn-2b-Dql"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="artistLabel" destination="u4l-eO-KmU" id="1VN-Yd-djm"/>
                 <outlet property="durationLabel" destination="EJv-6S-bfW" id="pWd-jE-0NB"/>
+                <outlet property="playbackButton" destination="BMv-41-guv" id="6WB-LN-OIt"/>
                 <outlet property="titleLabel" destination="tji-sG-yLV" id="9rv-Tq-Hlq"/>
             </connections>
-            <point key="canvasLocation" x="139" y="95"/>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
         </tableViewCell>
     </objects>
 </document>

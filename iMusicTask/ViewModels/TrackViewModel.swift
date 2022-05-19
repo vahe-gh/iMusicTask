@@ -16,7 +16,6 @@ class TrackViewModel {
     // MARK: - Public properties
     
     var data = [TrackItemViewModel]()
-//    var reloadUI: ((Error?) -> ())?
     weak var delegate: UpdateUIDelegate?
     
     // MARK: - Data operations
