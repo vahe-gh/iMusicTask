@@ -8,7 +8,8 @@
 import Foundation
 
 struct TrackItemViewModel {
-    var title: String
-    var artist: String
-    var url: URL?
+    let title: String
+    let artist: String
+    let playTime: String
+    let url: URL?
 }

@@ -42,6 +42,18 @@
 		0D5177552836618B00CD55A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177532836618B00CD55A2 /* LoginViewController.swift */; };
 		0D5177572836654000CD55A2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177562836654000CD55A2 /* UIViewController+Extensions.swift */; };
 		0D5177582836654000CD55A2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177562836654000CD55A2 /* UIViewController+Extensions.swift */; };
+		0D51775A28367CD200CD55A2 /* TracksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51775928367CD200CD55A2 /* TracksTableViewController.swift */; };
+		0D51775B28367CD200CD55A2 /* TracksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51775928367CD200CD55A2 /* TracksTableViewController.swift */; };
+		0D51775F28367EC600CD55A2 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51775D28367EC600CD55A2 /* TrackTableViewCell.swift */; };
+		0D51776028367EC600CD55A2 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51775D28367EC600CD55A2 /* TrackTableViewCell.swift */; };
+		0D51776128367EC600CD55A2 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D51775E28367EC600CD55A2 /* TrackTableViewCell.xib */; };
+		0D51776228367EC600CD55A2 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D51775E28367EC600CD55A2 /* TrackTableViewCell.xib */; };
+		0D5177642836812600CD55A2 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177632836812600CD55A2 /* ReusableIdentifier.swift */; };
+		0D5177652836812600CD55A2 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177632836812600CD55A2 /* ReusableIdentifier.swift */; };
+		0D5177672836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177662836814A00CD55A2 /* UITableViewCell+Extensions.swift */; };
+		0D5177682836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177662836814A00CD55A2 /* UITableViewCell+Extensions.swift */; };
+		0D51776A283686BA00CD55A2 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D517769283686BA00CD55A2 /* Int+Extensions.swift */; };
+		0D51776B283686BA00CD55A2 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D517769283686BA00CD55A2 /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +100,12 @@
 		0D51774F28365EDD00CD55A2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0D5177532836618B00CD55A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D5177562836654000CD55A2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0D51775928367CD200CD55A2 /* TracksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksTableViewController.swift; sourceTree = "<group>"; };
+		0D51775D28367EC600CD55A2 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		0D51775E28367EC600CD55A2 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		0D5177632836812600CD55A2 /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
+		0D5177662836814A00CD55A2 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		0D517769283686BA00CD55A2 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				0D51773828350F8900CD55A2 /* UpdateUIDelegate.swift */,
+				0D5177632836812600CD55A2 /* ReusableIdentifier.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -214,6 +233,8 @@
 			children = (
 				0D5177462836572800CD55A2 /* URLComponents+Extensions.swift */,
 				0D5177562836654000CD55A2 /* UIViewController+Extensions.swift */,
+				0D5177662836814A00CD55A2 /* UITableViewCell+Extensions.swift */,
+				0D517769283686BA00CD55A2 /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -221,10 +242,21 @@
 		0D5177522836616A00CD55A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D51775C28367EA400CD55A2 /* Components */,
 				0D517702283506E400CD55A2 /* Main.storyboard */,
 				0D5177532836618B00CD55A2 /* LoginViewController.swift */,
+				0D51775928367CD200CD55A2 /* TracksTableViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0D51775C28367EA400CD55A2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0D51775D28367EC600CD55A2 /* TrackTableViewCell.swift */,
+				0D51775E28367EC600CD55A2 /* TrackTableViewCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +366,7 @@
 				0D517709283506E500CD55A2 /* LaunchScreen.storyboard in Resources */,
 				0D517706283506E500CD55A2 /* Assets.xcassets in Resources */,
 				0D517704283506E400CD55A2 /* Main.storyboard in Resources */,
+				0D51776128367EC600CD55A2 /* TrackTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D51776228367EC600CD55A2 /* TrackTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,12 +401,17 @@
 				0D51775028365EDD00CD55A2 /* UserViewModel.swift in Sources */,
 				0D51773928350F8900CD55A2 /* UpdateUIDelegate.swift in Sources */,
 				0D5176FD283506E400CD55A2 /* AppDelegate.swift in Sources */,
+				0D5177642836812600CD55A2 /* ReusableIdentifier.swift in Sources */,
 				0D5176FF283506E400CD55A2 /* SceneDelegate.swift in Sources */,
 				0D51772E28350A9200CD55A2 /* Track.swift in Sources */,
 				0D51774A28365E7C00CD55A2 /* User.swift in Sources */,
 				0D5177572836654000CD55A2 /* UIViewController+Extensions.swift in Sources */,
+				0D51775F28367EC600CD55A2 /* TrackTableViewCell.swift in Sources */,
 				0D517743283653FB00CD55A2 /* HTTPRequest.swift in Sources */,
 				0D51773D2835105800CD55A2 /* APIService.swift in Sources */,
+				0D51775A28367CD200CD55A2 /* TracksTableViewController.swift in Sources */,
+				0D51776A283686BA00CD55A2 /* Int+Extensions.swift in Sources */,
+				0D5177672836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */,
 				0D51773528350CEC00CD55A2 /* TrackItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,18 +421,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D51773A28350F8900CD55A2 /* UpdateUIDelegate.swift in Sources */,
+				0D51776B283686BA00CD55A2 /* Int+Extensions.swift in Sources */,
 				0D51775128365EDD00CD55A2 /* UserViewModel.swift in Sources */,
+				0D5177652836812600CD55A2 /* ReusableIdentifier.swift in Sources */,
 				0D51773328350BC100CD55A2 /* TrackViewModel.swift in Sources */,
 				0D5177482836572800CD55A2 /* URLComponents+Extensions.swift in Sources */,
 				0D517714283506E500CD55A2 /* iMusicTaskTests.swift in Sources */,
 				0D51772F28350A9200CD55A2 /* Track.swift in Sources */,
 				0D51773E2835105800CD55A2 /* APIService.swift in Sources */,
+				0D5177682836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */,
 				0D517744283653FB00CD55A2 /* HTTPRequest.swift in Sources */,
 				0D51774E28365EA600CD55A2 /* UserItemViewModel.swift in Sources */,
 				0D51773628350CEC00CD55A2 /* TrackItemViewModel.swift in Sources */,
 				0D5177582836654000CD55A2 /* UIViewController+Extensions.swift in Sources */,
+				0D51776028367EC600CD55A2 /* TrackTableViewCell.swift in Sources */,
 				0D51774B28365E7C00CD55A2 /* User.swift in Sources */,
 				0D5177552836618B00CD55A2 /* LoginViewController.swift in Sources */,
+				0D51775B28367CD200CD55A2 /* TracksTableViewController.swift in Sources */,
 				0D517741283511B400CD55A2 /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Track {
+struct Track: Decodable {
     let id: Int
     let title: String
     let artist: String
-    let play_time: Int
+    let playTime: Int
     let url: String
     
     enum CodingKeys: String, CodingKey {

@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     
     private var dataSource = UserViewModel()
 //    private let refreshControl = UIRefreshControl()
-    private let detailSegue = "ShowTrackList"
+    private let detailSegue = "showTracks"
 
     // MARK: - Lifecycle
     
@@ -90,8 +90,7 @@ private extension LoginViewController {
     private func reloadDataView() {
         DispatchQueue.main.async {
 //            self.refreshControl.endRefreshing()
-            self.showOkAlert(title: "Navigating to list.")
-//            self.performSegue(withIdentifier: self.detailSegue, sender: nil)
+            self.performSegue(withIdentifier: self.detailSegue, sender: nil)
         }
     }
     
