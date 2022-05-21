@@ -26,6 +26,8 @@ class TrackTableViewCell: UITableViewCell {
             }
         }
     }
+    var indexPath: IndexPath?
+    weak var delegate: PlaybackDelegate?
     
     // MARK: - Private properties
     
@@ -47,14 +49,16 @@ class TrackTableViewCell: UITableViewCell {
     // MARK: - User interaction
     
     @IBAction func playbackButtonTapped(_ sender: Any) {
-        guard let data = data else {
+        guard let data = data, let indexPath = indexPath else {
             return
         }
         
         if data.playbackState == .playing {
             self.data?.playbackState = .paused
+            delegate?.pause(at: indexPath)
         } else {
             self.data?.playbackState = .playing
+            delegate?.play(at: indexPath)
         }
         
         updateButtonState()

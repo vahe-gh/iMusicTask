@@ -45,10 +45,11 @@ private extension TrackViewModel {
     func createViewModel(from data: Track) -> TrackItemViewModel {
         let url = URL(string: data.url)
         let itemViewModel = TrackItemViewModel(
+            id: data.id,
             title: data.title,
             artist: data.artist,
             playTime: data.playTime.secondsToTime(),
-            url: url
+            downloadURL: url
         )
         return itemViewModel
     }

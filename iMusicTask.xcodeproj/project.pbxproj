@@ -54,6 +54,16 @@
 		0D5177682836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5177662836814A00CD55A2 /* UITableViewCell+Extensions.swift */; };
 		0D51776A283686BA00CD55A2 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D517769283686BA00CD55A2 /* Int+Extensions.swift */; };
 		0D51776B283686BA00CD55A2 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D517769283686BA00CD55A2 /* Int+Extensions.swift */; };
+		0D6B1E292837B39B00E7786E /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B1E282837B39B00E7786E /* LocalStorageManager.swift */; };
+		0D6B1E2A2837B39B00E7786E /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B1E282837B39B00E7786E /* LocalStorageManager.swift */; };
+		0D6B1E2C2837D83500E7786E /* PlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B1E2B2837D83500E7786E /* PlaybackDelegate.swift */; };
+		0D6B1E2D2837D83500E7786E /* PlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B1E2B2837D83500E7786E /* PlaybackDelegate.swift */; };
+		0D6B1E3528390D0600E7786E /* DownloadablePlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B1E3428390D0600E7786E /* DownloadablePlayerItem.swift */; };
+		0D6B1E3628390D0600E7786E /* DownloadablePlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B1E3428390D0600E7786E /* DownloadablePlayerItem.swift */; };
+		0DE41E59283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE41E58283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift */; };
+		0DE41E5A283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE41E58283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift */; };
+		0DE41E5C283943880050BEE5 /* ResourceLoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE41E5B283943880050BEE5 /* ResourceLoaderDelegate.swift */; };
+		0DE41E5D283943880050BEE5 /* ResourceLoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE41E5B283943880050BEE5 /* ResourceLoaderDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +116,11 @@
 		0D5177632836812600CD55A2 /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 		0D5177662836814A00CD55A2 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		0D517769283686BA00CD55A2 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		0D6B1E282837B39B00E7786E /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		0D6B1E2B2837D83500E7786E /* PlaybackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackDelegate.swift; sourceTree = "<group>"; };
+		0D6B1E3428390D0600E7786E /* DownloadablePlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadablePlayerItem.swift; sourceTree = "<group>"; };
+		0DE41E58283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadablePlayerItemDelegate.swift; sourceTree = "<group>"; };
+		0DE41E5B283943880050BEE5 /* ResourceLoaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoaderDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +171,7 @@
 		0D5176FB283506E400CD55A2 /* iMusicTask */ = {
 			isa = PBXGroup;
 			children = (
+				0D6B1E212837AE1500E7786E /* PlaybackManager */,
 				0D5177452836571300CD55A2 /* Extensions */,
 				0D51773728350F3400CD55A2 /* Protocols */,
 				0D51772C28350A7500CD55A2 /* Models */,
@@ -214,6 +230,7 @@
 			children = (
 				0D51773828350F8900CD55A2 /* UpdateUIDelegate.swift */,
 				0D5177632836812600CD55A2 /* ReusableIdentifier.swift */,
+				0D6B1E2B2837D83500E7786E /* PlaybackDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -224,6 +241,7 @@
 				0D51773C2835105800CD55A2 /* APIService.swift */,
 				0D517742283653FB00CD55A2 /* HTTPRequest.swift */,
 				0D51773F283511B400CD55A2 /* AppError.swift */,
+				0D6B1E282837B39B00E7786E /* LocalStorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,6 +275,16 @@
 				0D51775E28367EC600CD55A2 /* TrackTableViewCell.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		0D6B1E212837AE1500E7786E /* PlaybackManager */ = {
+			isa = PBXGroup;
+			children = (
+				0DE41E58283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift */,
+				0D6B1E3428390D0600E7786E /* DownloadablePlayerItem.swift */,
+				0DE41E5B283943880050BEE5 /* ResourceLoaderDelegate.swift */,
+			);
+			path = PlaybackManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +420,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D6B1E292837B39B00E7786E /* LocalStorageManager.swift in Sources */,
+				0DE41E5C283943880050BEE5 /* ResourceLoaderDelegate.swift in Sources */,
 				0D51774D28365EA600CD55A2 /* UserItemViewModel.swift in Sources */,
 				0D517701283506E400CD55A2 /* ViewController.swift in Sources */,
 				0D51773228350BC100CD55A2 /* TrackViewModel.swift in Sources */,
@@ -400,6 +430,7 @@
 				0D517740283511B400CD55A2 /* AppError.swift in Sources */,
 				0D51775028365EDD00CD55A2 /* UserViewModel.swift in Sources */,
 				0D51773928350F8900CD55A2 /* UpdateUIDelegate.swift in Sources */,
+				0D6B1E2C2837D83500E7786E /* PlaybackDelegate.swift in Sources */,
 				0D5176FD283506E400CD55A2 /* AppDelegate.swift in Sources */,
 				0D5177642836812600CD55A2 /* ReusableIdentifier.swift in Sources */,
 				0D5176FF283506E400CD55A2 /* SceneDelegate.swift in Sources */,
@@ -409,6 +440,8 @@
 				0D51775F28367EC600CD55A2 /* TrackTableViewCell.swift in Sources */,
 				0D517743283653FB00CD55A2 /* HTTPRequest.swift in Sources */,
 				0D51773D2835105800CD55A2 /* APIService.swift in Sources */,
+				0D6B1E3528390D0600E7786E /* DownloadablePlayerItem.swift in Sources */,
+				0DE41E59283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift in Sources */,
 				0D51775A28367CD200CD55A2 /* TracksTableViewController.swift in Sources */,
 				0D51776A283686BA00CD55A2 /* Int+Extensions.swift in Sources */,
 				0D5177672836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */,
@@ -427,18 +460,23 @@
 				0D51773328350BC100CD55A2 /* TrackViewModel.swift in Sources */,
 				0D5177482836572800CD55A2 /* URLComponents+Extensions.swift in Sources */,
 				0D517714283506E500CD55A2 /* iMusicTaskTests.swift in Sources */,
+				0D6B1E3628390D0600E7786E /* DownloadablePlayerItem.swift in Sources */,
 				0D51772F28350A9200CD55A2 /* Track.swift in Sources */,
 				0D51773E2835105800CD55A2 /* APIService.swift in Sources */,
 				0D5177682836814A00CD55A2 /* UITableViewCell+Extensions.swift in Sources */,
 				0D517744283653FB00CD55A2 /* HTTPRequest.swift in Sources */,
 				0D51774E28365EA600CD55A2 /* UserItemViewModel.swift in Sources */,
 				0D51773628350CEC00CD55A2 /* TrackItemViewModel.swift in Sources */,
+				0D6B1E2A2837B39B00E7786E /* LocalStorageManager.swift in Sources */,
 				0D5177582836654000CD55A2 /* UIViewController+Extensions.swift in Sources */,
+				0D6B1E2D2837D83500E7786E /* PlaybackDelegate.swift in Sources */,
+				0DE41E5D283943880050BEE5 /* ResourceLoaderDelegate.swift in Sources */,
 				0D51776028367EC600CD55A2 /* TrackTableViewCell.swift in Sources */,
 				0D51774B28365E7C00CD55A2 /* User.swift in Sources */,
 				0D5177552836618B00CD55A2 /* LoginViewController.swift in Sources */,
 				0D51775B28367CD200CD55A2 /* TracksTableViewController.swift in Sources */,
 				0D517741283511B400CD55A2 /* AppError.swift in Sources */,
+				0DE41E5A283942E70050BEE5 /* DownloadablePlayerItemDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

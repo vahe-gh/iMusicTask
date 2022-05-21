@@ -12,12 +12,10 @@ class UserViewModel {
     // MARK: - Private properties
     
     private var modelData: User?
-//    private let username = "465a4fafa45sfa46"
     
     // MARK: - Public properties
     
     var data: UserItemViewModel?
-//    var reloadUI: ((Error?) -> ())?
     weak var delegate: UpdateUIDelegate?
     
     // MARK: - Data operations
@@ -35,6 +33,7 @@ class UserViewModel {
             case .success(let data):
                 self.data = UserItemViewModel(token: data.token)
                 APIService.shared.updateToken(withValue: data.token)
+                LocalStorageManager.shared.setUserDir(userId: username)
                 self.delegate?.updateUI(error: nil)
             case .failure(let error):
                 self.delegate?.updateUI(error: error)

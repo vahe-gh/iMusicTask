@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TracksTableViewController: UITableViewController {
 
-    // MARK: - Properties
+    // MARK: - Private properties
     
     private let dataSource = TrackViewModel()
+    private var playingIndexPath: IndexPath?
+    private var player: AVPlayer?
     
     // MARK: - Lifecycle
     
@@ -72,47 +75,14 @@ extension TracksTableViewController {
         }
         
         cell.data = dataSource.data[indexPath.row]
+        cell.delegate = self
+        cell.indexPath = indexPath
 
         /// Configure the cell
         cell.selectionStyle = .none
         
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
     
 }
 
@@ -169,6 +139,88 @@ extension TracksTableViewController: UpdateUIDelegate {
             }
             self?.tableView.reloadData()
         }
+    }
+    
+}
+
+extension TracksTableViewController: DownloadablePlayerItemDelegate {
+    
+    func playerItem(_ playerItem: DownloadablePlayerItem, didFinishDownloadingData data: Data) {
+        guard let indexPath = playingIndexPath,
+              let saveTo = dataSource.data[indexPath.row].localFileURL else {
+            return
+        }
+        
+        dataSource.data[indexPath.row].setAsDownloaded()
+        LocalStorageManager.shared.saveDataToFile(data: data, saveTo: saveTo)
+    }
+     
+}
+
+private extension TracksTableViewController {
+    
+    func playFromLocal(url: URL) {
+        let playerItem = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: playerItem)
+        player?.play()
+    }
+    
+    func playFromRemote(url: URL) {
+        let playerItem = DownloadablePlayerItem(url: url)
+        playerItem.delegate = self
+        player = AVPlayer(playerItem: playerItem)
+        player?.automaticallyWaitsToMinimizeStalling = false
+        player?.play()
+    }
+    
+    func pausePreviousPlayback(at indexPath: IndexPath?) {
+        guard let player = player else {
+            return
+        }
+        
+        if player.rate == 0 {
+            return
+        }
+        
+        player.pause()
+        
+        guard let indexPath = indexPath, let playingCell = tableView.cellForRow(at: indexPath) as? TrackTableViewCell else {
+            return
+        }
+        dataSource.data[indexPath.row].playbackState = .stopped
+        playingCell.data = dataSource.data[indexPath.row]
+    }
+    
+}
+
+extension TracksTableViewController: PlaybackDelegate {
+    
+    func play(at indexPath: IndexPath) {
+        guard playingIndexPath != indexPath else {
+            continuePlayback()
+            return
+        }
+        pausePreviousPlayback(at: playingIndexPath)
+        playingIndexPath = indexPath
+        
+        let data = dataSource.data[indexPath.row]
+        guard let downloadURL = data.downloadURL, let localURL = data.localFileURL else {
+            return
+        }
+        
+        if data.isDownloaded {
+            playFromLocal(url: localURL)
+        } else {
+            playFromRemote(url: downloadURL)
+        }
+    }
+    
+    func continuePlayback() {
+        player?.play()
+    }
+    
+    func pause(at indexPath: IndexPath) {
+        player?.pause()
     }
     
 }

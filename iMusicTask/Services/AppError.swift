@@ -11,6 +11,8 @@ enum AppError: Error {
     case cantGenerateURL
     case invalidURL
     case unknownError
+    case fileNotExist
+    case cantDeleteFile
 }
 
 extension AppError: LocalizedError {
@@ -22,6 +24,10 @@ extension AppError: LocalizedError {
             return "URL is invalid."
         case .unknownError:
             return "Unknown error, please contact support."
+        case .fileNotExist:
+            return "File does not exist."
+        case .cantDeleteFile:
+            return "Can't delete file."
         }
     }
 }
